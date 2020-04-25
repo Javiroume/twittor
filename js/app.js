@@ -1,6 +1,20 @@
 
+// Constantes de validaciones-----------------------------------------------
+
+var url= window.location.href;
+var swLocation = '/twittor/sw.js';
+
+// Registro de SW y validaciones de URL--------------------------------------
+
 if (navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+
+    if (url.includes('localhost')){
+
+        swLocation= '/sw.js';
+
+    }
+
+    navigator.serviceWorker.register(swLocation);
 }
 
 // Referencias de jQuery
